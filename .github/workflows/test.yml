@@ -83,6 +83,11 @@ jobs:
 
 
   build-ags4:
+    # AGS Draconian: the ags4 game uses fork-only script API (e.g. Opacity), so it must be
+    # built with the AGS Draconian editor, not the upstream editor that atbx installs.
+    # Until the Draconian repo builds its editor in CI, build it locally and upload
+    # Compiled/Data as ags4-auto-test.zip to a "draconian-auto-test-N" release by hand.
+    if: false
     runs-on: windows-2022
     timeout-minutes: 10
     permissions:
